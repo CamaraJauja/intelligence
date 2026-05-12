@@ -5,6 +5,7 @@ export const getCompaniesAll = async () => {
         const { data, error } = await db
             .from('companies')
             .select('*')
+            .order('id', { ascending: true })
         
         if (error) throw new Error(error);
         

@@ -1,16 +1,15 @@
 'use client';
 
+import Cards from "@/components/Cards";
+import Table from "@/components/Table";
 import { useDB } from "@/context/DBContext";
+import { useMemo, useState } from "react";
 
 export default function Home () {
 
-    const { company } = useDB();
+    const { company, loadingCompany, errorCompany } = useDB();
 
     const totalCompanies = company.length;
-
-    const activeCompanies = company.filter(c => c.is_active).length;
-
-    const inactiveCompanies = company.filter(c => !c.is_active).length;
 
     /* =========================
         COMPANIES BY SECTOR
@@ -62,18 +61,6 @@ export default function Home () {
         }))
         .sort((a, b) => b.total - a.total);
 
-    /* =========================
-        TOP SECTOR
-    ========================= */
-
-    const topSector = sectorData[0];
-
-    /* =========================
-        TOP DISTRICT
-    ========================= */
-
-    const topDistrict = districtData[0];
-
     return (
         
         <div className="w m-auto flex flex-col gap-md" style={{"--mxw": "90%"}}>
@@ -86,24 +73,7 @@ export default function Home () {
                 </div>
             </div>
 
-            <div className="w-full grid grid-2 gap-md lg:grid-4">
-                <div className="w-full p-md border bg-surface">
-                    <p className="text-sm">Total de registro</p>
-                    <h2>{totalCompanies}</h2>
-                </div>
-                <div className="w-full p-md border bg-surface">
-                    <p className="text-sm">Activos vs Inactivos</p>
-                    <h2>{activeCompanies} / {inactiveCompanies}</h2>
-                </div>
-                <div className="w-full p-md border bg-surface">
-                    <p className="text-sm">Sector dominante</p>
-                    <h2>{topSector?.name || 'N/A'}</h2>
-                </div>
-                <div className="w-full p-md border bg-surface">
-                    <p className="text-sm">Distrito económico</p>
-                    <h2>{topDistrict?.name || 'N/A'}</h2>
-                </div>
-            </div>
+            <Cards company={company} />
 
             <div className="flex flex-col gap-md lg:flex-row">
                 <div className="w-full border bg-surface p-md">
@@ -131,6 +101,8 @@ export default function Home () {
                     </ul>
                 </div>
             </div>
+
+            <Table company={company} />
         
         </div>
 
