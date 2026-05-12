@@ -18,7 +18,7 @@ export default function RootLayout ({ children }) {
         <html lang="es" className={`${montserrat.variable}`}>
             <DBProvider>
                 <body className="flex bg-surface-high">
-                    <main className="w p-md lg:w lg:h-screen" style={{"--w": "100%", "--w-lg": "100dvw", "overflowY": "scroll"}}>{children}</main>
+                    <main className="w p-md lg:w h-screen" style={{"--w": "100%", "--w-lg": "100dvw", "overflowY": "scroll"}}>{children}</main>
                 </body>
             </DBProvider>
         </html>

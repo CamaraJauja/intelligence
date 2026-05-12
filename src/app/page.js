@@ -76,9 +76,9 @@ export default function Home () {
 
     return (
         
-        <div className="w m-auto" style={{"--mxw": "90%"}}>
+        <div className="w m-auto flex flex-col gap-md" style={{"--mxw": "90%"}}>
         
-            <div className="w-full flex items-center justify-between mb-lg">
+            <div className="w-full flex flex-col items-center justify-between gap-md lg:flex-row">
                 <h1>Resumen Ejecutivo</h1>
                 <div className="flex items-center gap-md">
                     <button className="px-md py-md">Últimos 90 días</button>
@@ -86,7 +86,7 @@ export default function Home () {
                 </div>
             </div>
 
-            <div className="w-full flex items-center gap-md mb-lg">
+            <div className="w-full grid grid-2 gap-md lg:grid-4">
                 <div className="w-full p-md border bg-surface">
                     <p className="text-sm">Total de registro</p>
                     <h2>{totalCompanies}</h2>
@@ -105,7 +105,7 @@ export default function Home () {
                 </div>
             </div>
 
-            <div className="flex gap-md lg:flex-row mb-lg">
+            <div className="flex flex-col gap-md lg:flex-row">
                 <div className="w-full border bg-surface p-md">
                     <h3 className="mb-md">Empresas por sector</h3>
                     <ul className="flex flex-col gap-md">
