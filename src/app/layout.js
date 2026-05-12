@@ -2,6 +2,7 @@ import { Montserrat } from "next/font/google"
 import "@/assets/css/global.css";
 import { DBProvider } from "@/context/DBContext";
 import Navbar from "@/layout/Navbar";
+import { Toaster } from "sonner";
 
 const montserrat = Montserrat({
     variable: "--font-montserrat-sans",
@@ -19,6 +20,7 @@ export default function RootLayout ({ children }) {
             <DBProvider>
                 <body className="flex bg-surface-high">
                     <main className="w p-md lg:w h-screen" style={{"--w": "100%", "--w-lg": "100dvw", "overflowY": "scroll"}}>{children}</main>
+                    <Toaster position="top-center" duration={5000} closeButton={true} />
                 </body>
             </DBProvider>
         </html>

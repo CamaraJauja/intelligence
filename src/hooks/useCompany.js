@@ -9,8 +9,6 @@ export const useCompany = () => {
 
     const fetchCompanies = useCallback(async () => {
 
-        if (companies.length > 0) return;
-
         try {
             setLoading(true);
             const data = await getCompaniesAll();
@@ -24,8 +22,14 @@ export const useCompany = () => {
 
     }, [])
 
+    const addCompany = (newCompany) => {
+        setCompanies(prev => [
+            newCompany,
+            ...prev
+        ])
+    };
+
     useEffect(() => {
-        if (companies.length > 0) return;
         fetchCompanies();
     }, [fetchCompanies])
 
@@ -33,7 +37,8 @@ export const useCompany = () => {
         companies,
         loadingCompany: loading,
         errorCompany: error,
-        refreshCompany: fetchCompanies
+        refreshCompany: fetchCompanies,
+        addCompany
     }
 
 }

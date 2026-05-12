@@ -19,6 +19,7 @@ export const DBProvider = ({ children }) => {
         company: company.companies,
         loadingCompany: company.loadingCompany,
         errorCompany: company.errorCompany,
+        addCompany: company.addCompany,
         refreshAll
     }
 

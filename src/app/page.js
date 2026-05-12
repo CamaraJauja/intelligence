@@ -3,11 +3,13 @@
 import Cards from "@/components/Cards";
 import Table from "@/components/Table";
 import { useDB } from "@/context/DBContext";
-import { useMemo, useState } from "react";
+import { useRouter } from "next/navigation";
 
 export default function Home () {
 
     const { company, loadingCompany, errorCompany } = useDB();
+
+    const router = useRouter();
 
     const totalCompanies = company.length;
 
@@ -69,7 +71,7 @@ export default function Home () {
                 <h1>Resumen Ejecutivo</h1>
                 <div className="flex items-center gap-md">
                     <button className="px-md py-md">Últimos 90 días</button>
-                    <button className="px-md py-md bg-background">Exportar PDF</button>
+                    <button className="px-md py-md bg-primary text-on-primary" onClick={() => router.push('/add')}>Añadir empresa</button>
                 </div>
             </div>
 
@@ -101,8 +103,6 @@ export default function Home () {
                     </ul>
                 </div>
             </div>
-
-            <Table company={company} />
         
         </div>
 
