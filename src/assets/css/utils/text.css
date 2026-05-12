@@ -1,0 +1,209 @@
+/* =========================
+📏 FONT SIZES
+========================= */
+
+.text-sm {
+    font-size: var(--text-body-sm-size);
+    line-height: var(--text-body-sm-line);
+}
+
+.text-md {
+    font-size: var(--text-body-md-size);
+    line-height: var(--text-body-md-line);
+}
+
+.text-lg {
+    font-size: var(--text-title-sm-size);
+    line-height: var(--text-title-sm-line);
+}
+
+.text-xl {
+    font-size: var(--text-headline-md-size);
+    line-height: var(--text-headline-md-line);
+}
+
+.text-2xl {
+    font-size: var(--text-display-lg-size);
+    line-height: var(--text-display-lg-line);
+}
+
+
+/* =========================
+🔠 FONT WEIGHT
+========================= */
+
+.font-regular {
+    font-weight: 400;
+}
+
+.font-medium {
+    font-weight: 500;
+}
+
+.font-semibold {
+    font-weight: 600;
+}
+
+.font-bold {
+    font-weight: 700;
+}
+
+
+/* =========================
+🎨 TEXT COLORS
+========================= */
+
+.text-primary {
+    color: var(--color-primary);
+}
+
+.text-secondary {
+    color: var(--color-secondary);
+}
+
+.text-tertiary {
+    color: var(--color-tertiary);
+}
+
+.text-surface {
+    color: var(--color-on-surface);
+}
+
+.text-muted {
+    color: var(--color-on-surface-variant);
+}
+
+.text-error {
+    color: var(--color-error);
+}
+
+.text-inverse {
+    color: var(--color-inverse-on-surface);
+}
+
+
+/* =========================
+📍 TEXT ALIGN
+========================= */
+
+.text-left {
+    text-align: left;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.text-right {
+    text-align: right;
+}
+
+.text-justify {
+    text-align: justify;
+}
+
+
+/* =========================
+🔡 TEXT TRANSFORM
+========================= */
+
+.uppercase {
+    text-transform: uppercase;
+}
+
+.lowercase {
+    text-transform: lowercase;
+}
+
+.capitalize {
+    text-transform: capitalize;
+}
+
+
+/* =========================
+🔤 LETTER SPACING
+========================= */
+
+.tracking-tight {
+    letter-spacing: -0.02em;
+}
+
+.tracking-normal {
+    letter-spacing: normal;
+}
+
+.tracking-wide {
+    letter-spacing: 0.05em;
+}
+
+
+/* =========================
+📏 TEXT DECORATION
+========================= */
+
+.no-underline {
+    text-decoration: none;
+}
+
+.underline {
+    text-decoration: underline;
+}
+
+.line-through {
+    text-decoration: line-through;
+}
+
+
+/* =========================
+🧩 TEXT OVERFLOW
+========================= */
+
+.text-truncate {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+
+/* =========================
+📦 TEXT PRESETS
+========================= */
+
+.text-body {
+    font-size: var(--text-body-md-size);
+    font-weight: var(--text-body-md-weight);
+    line-height: var(--text-body-md-line);
+    color: var(--color-on-surface);
+}
+
+.text-label {
+    font-size: var(--text-label-caps-size);
+    font-weight: var(--text-label-caps-weight);
+    line-height: var(--text-label-caps-line);
+    letter-spacing: var(--text-label-caps-spacing);
+    text-transform: uppercase;
+}
+
+.text-display {
+    font-size: var(--text-display-lg-size);
+    font-weight: var(--text-display-lg-weight);
+    line-height: var(--text-display-lg-line);
+    letter-spacing: var(--text-display-lg-spacing);
+}
+
+
+/* =========================
+🧪 EXTRA UTILITIES
+========================= */
+
+.text-nowrap {
+    white-space: nowrap;
+}
+
+.text-wrap {
+    white-space: normal;
+}
+
+.text-break {
+    word-break: break-word;
+}

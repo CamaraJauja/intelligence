@@ -1,66 +1,138 @@
-import Image from "next/image";
-import styles from "./page.module.css";
+'use client';
 
-export default function Home() {
-  return (
-    <div className={styles.page}>
-      <main className={styles.main}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className={styles.intro}>
-          <h1>To get started, edit the page.js file.</h1>
-          <p>
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
+import { useDB } from "@/context/DBContext";
+
+export default function Home () {
+
+    const { company } = useDB();
+
+    const totalCompanies = company.length;
+
+    const activeCompanies = company.filter(c => c.is_active).length;
+
+    const inactiveCompanies = company.filter(c => !c.is_active).length;
+
+    /* =========================
+        COMPANIES BY SECTOR
+    ========================= */
+
+    const sectorMap = {};
+
+    company.forEach(c => {
+
+        const sector = c.sector || 'Sin sector';
+
+        if (!sectorMap[sector]) {
+            sectorMap[sector] = 0;
+        }
+
+        sectorMap[sector]++;
+
+    });
+
+    const sectorData = Object.entries(sectorMap)
+        .map(([name, total]) => ({
+            name,
+            total
+        }))
+        .sort((a, b) => b.total - a.total);
+
+    /* =========================
+        COMPANIES BY DISTRICT
+    ========================= */
+
+    const districtMap = {};
+
+    company.forEach(c => {
+
+        const district = c.district || 'Sin distrito';
+
+        if (!districtMap[district]) {
+            districtMap[district] = 0;
+        }
+
+        districtMap[district]++;
+
+    });
+
+    const districtData = Object.entries(districtMap)
+        .map(([name, total]) => ({
+            name,
+            total
+        }))
+        .sort((a, b) => b.total - a.total);
+
+    /* =========================
+        TOP SECTOR
+    ========================= */
+
+    const topSector = sectorData[0];
+
+    /* =========================
+        TOP DISTRICT
+    ========================= */
+
+    const topDistrict = districtData[0];
+
+    return (
+        
+        <div className="w m-auto" style={{"--mxw": "90%"}}>
+        
+            <div className="w-full flex items-center justify-between mb-lg">
+                <h1>Resumen Ejecutivo</h1>
+                <div className="flex items-center gap-md">
+                    <button className="px-md py-md">Últimos 90 días</button>
+                    <button className="px-md py-md bg-background">Exportar PDF</button>
+                </div>
+            </div>
+
+            <div className="w-full flex items-center gap-md mb-lg">
+                <div className="w-full p-md border bg-surface">
+                    <p className="text-sm">Total de registro</p>
+                    <h2>{totalCompanies}</h2>
+                </div>
+                <div className="w-full p-md border bg-surface">
+                    <p className="text-sm">Activos vs Inactivos</p>
+                    <h2>{activeCompanies} / {inactiveCompanies}</h2>
+                </div>
+                <div className="w-full p-md border bg-surface">
+                    <p className="text-sm">Sector dominante</p>
+                    <h2>{topSector?.name || 'N/A'}</h2>
+                </div>
+                <div className="w-full p-md border bg-surface">
+                    <p className="text-sm">Distrito económico</p>
+                    <h2>{topDistrict?.name || 'N/A'}</h2>
+                </div>
+            </div>
+
+            <div className="flex gap-md lg:flex-row mb-lg">
+                <div className="w-full border bg-surface p-md">
+                    <h3 className="mb-md">Empresas por sector</h3>
+                    <ul className="flex flex-col gap-md">
+                        {sectorData.map(sector => (
+                            <li key={sector.name} className="w-full flex items-center gap-md">
+                                <p className="w-full">{sector.name}</p>
+                                <progress className="w-full" value={sector.total} max={totalCompanies}/>
+                                <p className="w flex justify-end" style={{"--w": "180px"}}>{sector.total}</p>
+                            </li>
+                        ))}
+                    </ul>
+                </div>
+                <div className="w-full border bg-surface p-md">
+                    <h3 className="mb-md">Empresas por distrito</h3>
+                    <ul className="flex flex-col gap-md">
+                        {districtData.map(district => (
+                            <li key={district.name} className="w-full flex items-center gap-md">
+                                <p className="w-full text-nowrap">{district.name}</p>
+                                <progress className="w-full" value={district.total} max={totalCompanies}/>
+                                <p className="w flex justify-end" style={{"--w": "180px"}}>{district.total}</p>
+                            </li>
+                        ))}
+                    </ul>
+                </div>
+            </div>
+        
         </div>
-        <div className={styles.ctas}>
-          <a
-            className={styles.primary}
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className={styles.logo}
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className={styles.secondary}
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
-    </div>
-  );
+
+    )
 }

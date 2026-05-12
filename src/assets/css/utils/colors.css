@@ -1,0 +1,85 @@
+.bg-primary { background-color: var(--color-primary); }
+.bg-primary-container { background-color: var(--color-primary-container); }
+
+.bg-secondary { background-color: var(--color-secondary); }
+.bg-secondary-container { background-color: var(--color-secondary-container); }
+
+.bg-tertiary { background-color: var(--color-tertiary); }
+.bg-tertiary-container { background-color: var(--color-tertiary-container); }
+
+.bg-surface { background-color: var(--color-surface); }
+.bg-surface-dim { background-color: var(--color-surface-dim); }
+.bg-surface-bright { background-color: var(--color-surface-bright); }
+
+.bg-surface-lowest { background-color: var(--color-surface-container-lowest); }
+.bg-surface-low { background-color: var(--color-surface-container-low); }
+.bg-surface-container { background-color: var(--color-surface-container); }
+.bg-surface-high { background-color: var(--color-surface-container-high); }
+.bg-surface-highest { background-color: var(--color-surface-container-highest); }
+
+.bg-surface-variant { background-color: var(--color-surface-variant); }
+
+.bg-background { background-color: var(--color-background); }
+
+.bg-error { background-color: var(--color-error); }
+.bg-error-container { background-color: var(--color-error-container); }
+
+.bg-inverse { background-color: var(--color-inverse-surface); }
+
+.bg-none { background: none; }
+
+/* =========================
+🧾 TEXT COLORS
+========================= */
+.text-primary { color: var(--color-primary); }
+.text-on-primary { color: var(--color-on-primary); }
+
+.text-secondary { color: var(--color-secondary); }
+.text-on-secondary { color: var(--color-on-secondary); }
+
+.text-tertiary { color: var(--color-tertiary); }
+.text-on-tertiary { color: var(--color-on-tertiary); }
+
+.text-surface { color: var(--color-on-surface); }
+.text-surface-variant { color: var(--color-on-surface-variant); }
+
+.text-background { color: var(--color-on-background); }
+
+.text-error { color: var(--color-error); }
+.text-on-error { color: var(--color-on-error); }
+.text-error-container { color: var(--color-on-error-container); }
+
+.text-inverse { color: var(--color-inverse-on-surface); }
+
+/* =========================
+🎯 STATES (HOVER / ACTIVE)
+========================= */
+.bg-hover:hover { background-color: var(--hover-surface); }
+
+.text-hover-primary:hover { color: var(--color-primary); }
+.text-hover-secondary:hover { color: var(--color-secondary); }
+
+.border-hover:hover { border-color: var(--color-outline); }
+
+/* =========================
+🔲 BORDERS
+========================= */
+.border { border: var(--border-default); }
+
+.border-outline { border: 1px solid var(--color-outline); }
+.border-outline-variant { border: 1px solid var(--color-outline-variant); }
+
+.border-primary { border: 1px solid var(--color-primary); }
+.border-secondary { border: 1px solid var(--color-secondary); }
+.border-tertiary { border: 1px solid var(--color-tertiary); }
+
+.border-error { border: 1px solid var(--color-error); }
+
+/* =========================
+🔲 FOCUS STATES
+========================= */
+.focus-ring:focus {
+    outline: none;
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 2px rgba(86, 94, 116, 0.2);
+}

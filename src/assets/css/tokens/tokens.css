@@ -1,0 +1,160 @@
+:root {
+    /* ========================
+        COLORS
+    ======================== */
+
+    --color-surface: #fcf8fa;
+    --color-surface-dim: #dcd9db;
+    --color-surface-bright: #fcf8fa;
+
+    --color-surface-container-lowest: #ffffff;
+    --color-surface-container-low: #f6f3f5;
+    --color-surface-container: #f0edef;
+    --color-surface-container-high: #eae7e9;
+    --color-surface-container-highest: #e4e2e4;
+
+    --color-on-surface: #1b1b1d;
+    --color-on-surface-variant: #45464d;
+
+    --color-background: #fcf8fa;
+    --color-on-background: #1b1b1d;
+
+    --color-surface-variant: #e4e2e4;
+
+    --color-outline: #76777d;
+    --color-outline-variant: #c6c6cd;
+
+    --color-inverse-surface: #303032;
+    --color-inverse-on-surface: #f3f0f2;
+
+    --color-surface-tint: #565e74;
+
+    /* PRIMARY */
+    --color-primary: #000000;
+    --color-on-primary: #ffffff;
+    --color-primary-container: #131b2e;
+    --color-on-primary-container: #7c839b;
+    --color-inverse-primary: #bec6e0;
+
+    /* SECONDARY */
+    --color-secondary: #505f76;
+    --color-on-secondary: #ffffff;
+    --color-secondary-container: #d0e1fb;
+    --color-on-secondary-container: #54647a;
+
+    /* TERTIARY */
+    --color-tertiary: #000000;
+    --color-on-tertiary: #ffffff;
+    --color-tertiary-container: #271901;
+    --color-on-tertiary-container: #98805d;
+
+    /* ERROR */
+    --color-error: #ba1a1a;
+    --color-on-error: #ffffff;
+    --color-error-container: #ffdad6;
+    --color-on-error-container: #93000a;
+
+    /* FIXED */
+    --color-primary-fixed: #dae2fd;
+    --color-primary-fixed-dim: #bec6e0;
+    --color-on-primary-fixed: #131b2e;
+    --color-on-primary-fixed-variant: #3f465c;
+
+    --color-secondary-fixed: #d3e4fe;
+    --color-secondary-fixed-dim: #b7c8e1;
+    --color-on-secondary-fixed: #0b1c30;
+    --color-on-secondary-fixed-variant: #38485d;
+
+    --color-tertiary-fixed: #fcdeb5;
+    --color-tertiary-fixed-dim: #dec29a;
+    --color-on-tertiary-fixed: #271901;
+    --color-on-tertiary-fixed-variant: #574425;
+
+
+    /* ========================
+        TYPOGRAPHY
+    ======================== */
+
+    --font-primary: 'Montserrat', sans-serif;
+    --font-mono: 'JetBrains Mono', monospace;
+
+    /* Display */
+    --text-display-lg-size: 32px;
+    --text-display-lg-weight: 700;
+    --text-display-lg-line: 40px;
+    --text-display-lg-spacing: -0.02em;
+
+    /* Headline */
+    --text-headline-md-size: 24px;
+    --text-headline-md-weight: 600;
+    --text-headline-md-line: 32px;
+    --text-headline-md-spacing: -0.01em;
+
+    /* Title */
+    --text-title-sm-size: 18px;
+    --text-title-sm-weight: 600;
+    --text-title-sm-line: 24px;
+
+    /* Body */
+    --text-body-md-size: 14px;
+    --text-body-md-weight: 400;
+    --text-body-md-line: 20px;
+
+    --text-body-sm-size: 13px;
+    --text-body-sm-weight: 400;
+    --text-body-sm-line: 18px;
+
+    /* Label */
+    --text-label-caps-size: 11px;
+    --text-label-caps-weight: 700;
+    --text-label-caps-line: 16px;
+    --text-label-caps-spacing: 0.05em;
+
+    /* Data Mono */
+    --text-data-mono-size: 13px;
+    --text-data-mono-weight: 500;
+    --text-data-mono-line: 18px;
+
+
+    /* ========================
+        BORDER RADIUS
+    ======================== */
+
+    --radius-sm: 0.125rem;
+    --radius-default: 0.25rem;
+    --radius-md: 0.375rem;
+    --radius-lg: 0.5rem;
+    --radius-xl: 0.75rem;
+    --radius-full: 9999px;
+
+
+    /* ========================
+        SPACING SYSTEM
+    ======================== */
+
+    --spacing-unit: 4px;
+    --space-xs: var(--spacing-unit);
+    --space-sm: 8px;
+    --space-md: 16px;
+    --space-lg: 24px;
+    --space-xl: 32px;
+    --space-2xl: 48px;
+
+    --container-max-width: 1440px;
+
+    --gutter: 16px;
+
+    --margin-desktop: 32px;
+    --margin-mobile: 16px;
+
+    --table-cell-padding: 12px 16px;
+
+
+    /* ========================
+        BORDERS / UI TOKENS
+    ======================== */
+
+    --border-default: 1px solid var(--color-outline-variant);
+
+    --hover-surface: #f6f3f5;
+}

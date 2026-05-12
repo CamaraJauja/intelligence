@@ -1,0 +1,19 @@
+.w { width: var(--w); min-width: var(--mnw); max-width: var(--mxw); }
+.h { height: var(--h); min-height: var(--mnh); max-height: var(--mxh); }
+
+.w-screen { width: 100dvw; }
+.h-screen { height: 100dvh; }
+
+.w-full { width: 100%; }
+.h-full { height: 100%; }
+
+@media (min-width: 1024px) {
+    .lg\:w { width: var(--w-lg); min-width: var(--mnw-lg); max-width: var(--mxw-lg); }
+    .lg\:h { height: var(--h-lg); min-height: var(--mnh-lg); max-height: var(--mxh-lg); }
+
+    .lg\:w-screen { width: 100dvw; }
+    .lg\:h-screen { height: 100dvh; }
+
+    .lg\:w-full { width: 100%; }
+    .lg\:h-full { height: 100%; }
+}
